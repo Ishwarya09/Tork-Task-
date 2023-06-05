@@ -45,7 +45,6 @@ nwy_osiTimer_t *uart_app_timer = NULL;
  nwy_osiThread_t *content_thread = NULL;
 // mutex thread
 nwy_osiMutex_t *content_thread_mutex = NULL;
-
 // Queue Handler
 nwy_osiMessageQueue_t *mqtt_publish_msg_queue = NULL;
 nwy_osiMessageQueue_t *uart_tx_msg_queue = NULL;
@@ -57,7 +56,7 @@ nwy_osiSemaphore_t *uart_tx_semaphore = NULL;
 nwy_osiSemaphore_t *tork_update_semaphore = NULL;
 nwy_osiSemaphore_t *s32_update_semaphore = NULL;
 // new semaphore thread
-nwy_osiSemaphore_t *content_thread_semaphore = NULL;
+//nwy_osiSemaphore_t *content_thread_semaphore = NULL;
 
 void read_and_send_data_mqtt(void);
 uint8_t data_backup_file_count();
@@ -373,7 +372,7 @@ int appimg_enter(void *param)
     tork_update_semaphore = nwy_semaphore_create(1, 0);
     s32_update_semaphore = nwy_semaphore_create(1, 0);
     // new thread
-    content_thread_semaphore = nwy_semaphore_create(1, 0);
+    //content_thread_semaphore = nwy_semaphore_create(1, 0);
 
     uart_app_thread = nwy_create_thread("uart_thread", UART_rx_ThreadEntry, NULL, NWY_OSI_PRIORITY_NORMAL, 1024 * 40, 16);
 
