@@ -43,6 +43,8 @@ nwy_osiThread_t *device_config_thread_handle = NULL;
 nwy_osiTimer_t *uart_app_timer = NULL;
 // new thread
  nwy_osiThread_t *content_thread = NULL;
+// mutex thread
+nwy_osiMutex_t *content_thread_mutex = NULL;
 
 // Queue Handler
 nwy_osiMessageQueue_t *mqtt_publish_msg_queue = NULL;
