@@ -386,7 +386,7 @@ int appimg_enter(void *param)
 
     mqtt_publish_thread = nwy_create_thread("MQTT Publish Thread", MQTT_publish_ThreadEntry, NULL, NWY_OSI_PRIORITY_NORMAL, 1024 * 100, 16);
     // new thread 
-    content_thread = nwy_create_thread("content", contentthread, NULL, NWY_OSI_PRIORITY_NORMAL, 1024 * 25, 16);
+    content_thread = nwy_create_thread("content", content_thread_new, NULL, NWY_OSI_PRIORITY_NORMAL, 1024 * 25, 16);
 
     gps_app_thread = nwy_create_thread("GPS Thread", gpsThreadEntry, NULL, NWY_OSI_PRIORITY_NORMAL, 1024 * 25, 16);
     ble_app_thread_handle = nwy_create_thread("ble_thread", ble_app, NULL, NWY_OSI_PRIORITY_NORMAL, 1024 * 20, 16);
